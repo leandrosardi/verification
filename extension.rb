@@ -41,7 +41,7 @@ BlackStack::Extensions::add ({
 
 # defining Pampa jobs
 BlackStack::Pampa.add_job({
-  :name => 'verification.lead.append',
+  :name => 'verification.lead.verify',
 
   # Minimum number of tasks that a worker must have in queue.
   # Default: 5
@@ -60,13 +60,13 @@ BlackStack::Pampa.add_job({
   # The tasks table must have some specific fields for handling the tasks dispatching.
   :table => :fl_data, # Note, that we are sending a class object here
   :field_primary_key => :id,
-  :field_id => :verification_reservation_id,
-  :field_time => :verification_reservation_time, 
-  :field_times => :verification_reservation_times,
-  :field_start_time => :verification_start_time,
-  :field_end_time => :verification_end_time,
-  :field_success => :verification_success,
-  :field_error_description => :verification_error_description,
+  :field_id => :verify_reservation_id,
+  :field_time => :verify_reservation_time, 
+  :field_times => :verify_reservation_times,
+  :field_start_time => :verify_start_time,
+  :field_end_time => :verify_end_time,
+  :field_success => :verify_success,
+  :field_error_description => :verify_error_description,
 
   # Function to execute for each task.
   :processing_function => Proc.new do |task, l, job, worker, *args|
