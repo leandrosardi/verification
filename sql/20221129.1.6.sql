@@ -10,10 +10,10 @@ create table if not exists vrf_order (
 );
 
 -- pampa fields for verification
-alter table fl_data add verify_reservation_id varchar(500) null;
-alter table fl_data add verify_reservation_time timestamp null;
-alter table fl_data add verify_reservation_times int null;
-alter table fl_data add verify_start_time timestamp null;
-alter table fl_data add verify_end_time timestamp null;
-alter table fl_data add verify_success boolean null;
-alter table fl_data add verify_error_description text null;
+alter table fl_data add column if not exists verify_reservation_id varchar(500) null;
+alter table fl_data add column if not exists verify_reservation_time timestamp null;
+alter table fl_data add column if not exists verify_reservation_times int null;
+alter table fl_data add column if not exists verify_start_time timestamp null;
+alter table fl_data add column if not exists verify_end_time timestamp null;
+alter table fl_data add column if not exists verify_success boolean null;
+alter table fl_data add column if not exists verify_error_description text null;
