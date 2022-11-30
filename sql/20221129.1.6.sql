@@ -9,6 +9,10 @@ create table if not exists vrf_order (
     stat_verified_leads bigint null
 );
 
+alter table vrf_order add column if not exists "name" int not null;
+alter table vrf_order add column if not exists delete_time timestamp null;
+alter table vrf_order add column if not exists "status" boolean not null;
+
 -- pampa fields for verification
 alter table fl_data add column if not exists verify_reservation_id varchar(500) null;
 alter table fl_data add column if not exists verify_reservation_time timestamp null;
