@@ -21,3 +21,4 @@ alter table fl_data add column if not exists verify_start_time timestamp null;
 alter table fl_data add column if not exists verify_end_time timestamp null;
 alter table fl_data add column if not exists verify_success boolean null;
 alter table fl_data add column if not exists verify_error_description text null;
+alter table fl_data add column if not exists verified boolean null;
