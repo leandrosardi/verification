@@ -5,14 +5,6 @@ end
 get "/verification/", :agent => /(.*)/ do
     redirect2 "/verification/orders", params
 end
-get "/verification/login", :agent => /(.*)/ do
-    redirect2 "/login", params
-end
-
-# public screens (signup/landing page)
-get "/verification/signup", :agent => /(.*)/ do
-    erb :"/extensions/verification/views/signup", :layout => :"/views/layouts/public"
-end
 
 # internal app screens
 get "/verification/offer", :auth => true, :agent => /(.*)/ do
